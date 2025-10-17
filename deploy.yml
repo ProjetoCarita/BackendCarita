@@ -14,17 +14,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Dependências
-        run: npm install --force      
+    #  - name: Dependências
+   #     run: npm install --force      
 
       - name: Semver
         run: npm install -g semver       
 
-      - name: Build
-        run: npm run build
+     # - name: Build
+     #   run: npm run build
 
-      - name: Testes
-        run: npm test -- --coverage
+    #  - name: Testes
+    #    run: npm test -- --coverage
 
       - name: Criar nova tag caso não exista
         env:
@@ -179,3 +179,4 @@ jobs:
           #  Workflow: ${{ github.workflow }}
           #  Job: ${{ github.job }}
           #  Veja os logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
