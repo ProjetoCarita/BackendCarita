@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://backend-carita-1.onrender.com/"
+      "url": "http://localhost:3000/"
     }
   ],
   "paths": {

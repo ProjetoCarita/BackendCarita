@@ -1,6 +1,7 @@
 // src/server.ts
 import express from 'express';
 import cors from 'cors';
+import comentariosroutes from "./routes/comentarios.routes"
 import organizacaoRoutes from "./routes/organizacao.routes";
 import parceiroRoutes from "./routes/parceiro.routes"
 import  pontoArrecadacaoRoutes from "./routes/pontoArrecadacao.routes"
@@ -46,12 +47,8 @@ app.use("/parceiros",AuthorizeMiddleware,parceiroRoutes)
 app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
 app.use("/usuarios",usuarioRoutes)
 app.use("/autenticacao", authRouter)
+app.use("/comentarios", comentariosroutes)
 
-//mudou isso aqui 
-  if (!socketId || !channel) {
-    res.status(400).json({ error: 'socket_id e channel_name são obrigatórios' });
-    return;
-  }
 
 // Endpoint para disparar um banner público
 app.post('/admin/helper/banner', (req, res) => {
