@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import comentariosroutes from "./routes/comentarios.routes"
 import organizacaoRoutes from "./routes/organizacao.routes";
 import parceiroRoutes from "./routes/parceiro.routes"
 import pontoArrecadacaoRoutes from "./routes/pontoArrecadacao.routes"
@@ -35,6 +36,14 @@ app.post('/admin/metrics/familias', (req, res) => {
   broadcastMetrics({ familiasAjudadas });
   res.json({ ok: true, familiasAjudadas });
 });
+
+app.use("/organizacoes", AuthorizeMiddleware, organizacaoRoutes);
+app.use("/parceiros",AuthorizeMiddleware,parceiroRoutes)
+app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
+app.use("/usuarios",usuarioRoutes)
+app.use("/autenticacao", authRouter)
+app.use("/comentarios", comentariosroutes)
+
 
 // Endpoint para disparar um banner público
 app.post('/admin/helper/banner', (req, res) => {

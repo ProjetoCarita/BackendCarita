@@ -5,7 +5,7 @@ const doc = {
     title: 'API Carita',
     description: 'Documentação da API do projeto Carita',
   },
-  host: 'https://backend-carita-1.onrender.com',
+  host: 'http://localhost:3000',
   schemes: ['http'],
 };
 
