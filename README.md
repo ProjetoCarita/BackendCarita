@@ -1,4 +1,4 @@
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+![Carita-Banner](https://github.com/user-attachments/assets/4e707fe9-2283-4e9b-b036-3e678ceb8f3b)
 
 ## 📌 Status do Projeto : Em andamento
 
@@ -22,17 +22,21 @@ O desenvolvimento do nosso projeto, seguiu conforme o andamento das nossas maté
 Nosso público-alvo é composto por pessoas físicas engajadas com causas sociais e empresas que buscam promover responsabilidade social por meio de doações seguras e impactantes. Também atendemos ONGs de diversas áreas que necessitam de apoio financeiro ou material para continuar suas atividades. O site conecta doadores conscientes a instituições sérias, criando uma ponte confiável e transparente. Nosso foco está em indivíduos solidários e organizações comprometidas com os Objetivos de Desenvolvimento Sustentável (ODS) da ONU.
 
 ## 📚 DIAGRAMA DE CLASSES
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="596" height="600" alt="447335335-d44ab38a-9592-43b1-b936-74cf2592c9cb" src="https://github.com/user-attachments/assets/3227b6dc-287a-4c29-b327-858276fcd781" />
+
 
 ## 📗 REQUISITOS FUNCIONAIS 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+![458619026-1c8ebbc4-104e-4e63-82a4-30846c74fd05](https://github.com/user-attachments/assets/9b1565a8-f7b1-45e7-b216-e4999307ba2b)
+
 
 ## 📕 REQUISITOS NÃO FUNCIONAIS
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+![458618827-6b183711-7652-4406-b767-5d9554d39858](https://github.com/user-attachments/assets/5f709e31-6919-4dd0-b281-7e5ed687758c)
+
 
 ## 🎯 **Objetivos de Desenvolvimento Sustentável (ODS)**
+<img width="1688" height="548" alt="451606484-642b0e1c-a379-44f7-9953-eed1dcb629d3" src="https://github.com/user-attachments/assets/dcc4733a-e59d-41fa-9df9-129c1ac5df0f" />
 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+
 
 
 ## 📅 ENTREGA DAS SPRINTS
@@ -77,52 +81,53 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
 </table>
 
 ## 💻🖥️ DEMONSTRAÇÃO DAS TELAS
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1361" height="1803" alt="447336903-5e7631a4-54b0-446b-80dc-50be568c9146" src="https://github.com/user-attachments/assets/39569c63-e3a9-4cf5-9659-22273cd40d14 " />
 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1360" height="1722" alt="447337134-af16061e-28b5-412c-b4a7-686ee5e3cd39" src="https://github.com/user-attachments/assets/1bb02bbf-925f-4a95-abca-3690e92169eb " />
 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1361" height="1745" alt="447337192-e6012e95-04c6-4970-a4bf-9097630c20ab" src="https://github.com/user-attachments/assets/9d32f08d-b2bb-4169-aec1-a5bd706889a9" />
 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1360" height="800" alt="447337168-70e376ae-32ff-458e-89d7-ffd256406994" src="https://github.com/user-attachments/assets/d3cc7466-dd87-4dbf-8e25-4dff3fbd47c3" />
 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1360" height="919" alt="447337151-a5b6c699-2bcd-4f2b-9333-863fc28d5b92" src="https://github.com/user-attachments/assets/79d753d8-ed04-431e-bc22-b2473b42a466" />
 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1360" height="919" alt="447338335-a632e9a5-3ba6-4e5f-bb7b-3b06bd0bbe89" src="https://github.com/user-attachments/assets/5ebba238-d7dc-4b7d-a456-eb033bbe6318" />
+
 
 ## 📅 GERENCIAMENTO DE CRONOGRAMA 
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+![447335690-b5f3b9ca-f41f-40b5-8606-38eb6485759b](https://github.com/user-attachments/assets/9c0f0aa2-63f5-4fcf-931d-796a74a6ff4e)
+
 
 ## 📚 BACKLOG
-![Image](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+<img width="1366" height="1765" alt="448613876-26d2ce94-2389-4c59-ba8a-9772847a4aeb (1)" src="https://github.com/user-attachments/assets/bdace696-c2ad-4c33-a688-1bd6d22c78da" />
+
 
 ## 🖥️ PROTÓTIPO E DOCUMENTAÇÃO
 
 > 🔗 **Links das documentações** 
 
-> - Documentação geral: [clique aqui para acessar](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%C3%A7%C3%B5es/Documenta%C3%A7%C3%A3o%203%C2%B0%20Semestre%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
-> - Técnicas de Programação: [clique aqui para acessar](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%C3%A7%C3%B5es/Carit%C3%A1%20tecnicas%20de%20programa%C3%A7%C3%A3o%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
-> - Interação Humano Computador: [clique aqui para acessar](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%C3%A7%C3%B5es/Documenta%C3%A7%C3%A3o%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
-> - Banco de Dados relacional - API: [clique aqui para acessar](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
-> - Front-End: [clique aqui para acessar](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
-> - Back-End: [clique aqui para acessar](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+> - Documentação geral: [clique aqui para acessar]()
+> - Front-End: [clique aqui para acessar](https://github.com/ProjetoCarita/Front-End-Carita)
+> - Back-End: [clique aqui para acessar](https://github.com/ProjetoCarita/Backend-carita.)
 
 ## 🛠️ TECNOLOGIAS UTILIZADAS
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%20Server-%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
-  <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip%https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="Badge HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="Badge CSS3"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="Badge TypeScript"/>
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Badge Angular"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Badge Node.js"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Badge Express.js"/>
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="Badge SQL Server"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Badge Git"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Badge GitHub"/>
+  <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Badge Swagger"/>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Badge Figma"/>
+  <img src="https://img.shields.io/badge/BrModelo-005FAD?style=for-the-badge&logo=databricks&logoColor=white" alt="Badge BrModelo"/>
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078D4?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Badge Visual Studio Code"/>
 </p>
+
 
 ## 👥 EQUIPE
 
@@ -139,8 +144,8 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
       <td>Ariele Peres</td>
       <td>Desenvolvedora Full Stack</td>
       <td>
-        <a href="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" target="_blank">
-          <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" alt="GitHub Badge">
+         <a href="https://github.com/arieleperes" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Ariele Peres">
         </a>
       </td>
     </tr>
@@ -148,8 +153,8 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
       <td>Fernando Ribeiro</td>
       <td>Product Owner</td>
       <td>
-        <a href="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" target="_blank">
-          <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" alt="GitHub Badge">
+       <a href="https://github.com/FernandoRSantos" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Fernando Ribeiro">
         </a>
       </td>
     </tr>
@@ -157,8 +162,8 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
       <td>Guilherme Pazetti</td>
       <td>Database Administrator</td>
       <td>
-        <a href="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" target="_blank">
-          <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" alt="GitHub Badge">
+        <a href="https://github.com/Pazetti" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Guilherme Pazetti">
         </a>
       </td>
     </tr>
@@ -166,8 +171,8 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
       <td>Guilherme Piva</td>
       <td>Scrum Master</td>
       <td>
-        <a href="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" target="_blank">
-          <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" alt="GitHub Badge">
+        <a href="https://github.com/Mayarasb" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Mayara Barros">
         </a>
       </td>
     </tr>
@@ -175,8 +180,8 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
       <td>Mayara Barros</td>
       <td>Product Owner</td>
       <td>
-        <a href="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" target="_blank">
-          <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" alt="GitHub Badge">
+      <a href="https://github.com/Mayarasb" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Mayara Barros">
         </a>
       </td>
     </tr>
@@ -184,8 +189,8 @@ Nosso público-alvo é composto por pessoas físicas engajadas com causas sociai
       <td>Vanessa Capuano</td>
       <td>Desenvolvedora Full Stack</td>
       <td>
-        <a href="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" target="_blank">
-          <img src="https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip" alt="GitHub Badge">
+        <a href="https://github.com/Vanessa-Nobrega" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Vanessa Capuano">
         </a>
       </td>
     </tr>
@@ -241,7 +246,7 @@ POST    /usuario/:id/desativar      # Desativar usuário
 ### **Pré-requisitos**
 - npm ou yarn
 - Git
-- [https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip](https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip)
+- https://github.com/ProjetoCarita/Backend-carita.
 - Angular CLI
 - TypeScript
 - SQL Server (para o banco de dados)
@@ -297,7 +302,7 @@ npm run serve:ssr:Projeto-carita
 ```
 
 ## 📚 **Swagger - Documentação Interativa da API**
-- Acesse: https://raw.githubusercontent.com/Pazetti/Backend-Carita/main/succubus/Backend-Carita.zip 
+- Acesse: 
 - Use o botão **Authorize** para testar rotas protegidas.
 - Todas as rotas principais estão documentadas com exemplos.
 
