@@ -6,4 +6,4 @@ import { pontoArrecadacaoModel} from "../models/pontoArrecadacao.model";
 import { UsuarioModel } from "../models/usuario.model"; 
 import { ForeignKey } from 'sequelize-typescript';
 
-Organizacao.belongsTo(models.Usuario,{ForeignKey:"i"})
+//Organizacao.belongsTo(models.Usuario,{ForeignKey:"i"})
