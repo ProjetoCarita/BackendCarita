@@ -1,43 +1,38 @@
-// src/server.ts
 import express from 'express';
 import cors from 'cors';
 import comentariosroutes from "./routes/comentarios.routes"
 import organizacaoRoutes from "./routes/organizacao.routes";
 import parceiroRoutes from "./routes/parceiro.routes"
-import  pontoArrecadacaoRoutes from "./routes/pontoArrecadacao.routes"
+import pontoArrecadacaoRoutes from "./routes/pontoArrecadacao.routes"
 import usuarioRoutes from "./routes/usuario.routers"
 import { authRouter } from "./routes/auth.routes";
 import { AuthorizeMiddleware } from './middlewares/authorize.middleware';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { initSocket, broadcastBanner, broadcastMetrics } from './realtime/socket';
+import paymentRoutes from './routes/rotasPagamento';
 
 dotenv.config();
 
 const app = express();
 import swaggerUi from 'swagger-ui-express';
-const swaggerFile = require('./swagger-output.json');
+const swaggerFile = require('../swagger-output.json');
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-// app.use(cors({ origin: 'http://localhost:4200', credentials: true }));
-app.use(cors({
-    origin: "*"
-}));
-app.use(express.json());
-app.use(bodyParser.json());
+app.use(cors({ origin: "*" }));
+app.use(express.json()); // ← APENAS UMA VEZ
+app.use(express.urlencoded({ extended: true }));
 
-// ==== MÉTRICAS EM MEMÓRIA (exemplo simples) ====
+// ==== MÉTRICAS EM MEMÓRIA ====
 let familiasAjudadas = 0;
 
-// Endpoint para atualizar métricas (p. ex., ao registrar nova doação)
+// Endpoint para atualizar métricas
 app.post('/admin/metrics/familias', (req, res) => {
-  // Ex.: { delta: 3 } ou { total: 120 }
   const { delta, total } = req.body as { delta?: number; total?: number };
   if (typeof total === 'number') familiasAjudadas = Math.max(0, total);
   if (typeof delta === 'number') familiasAjudadas = Math.max(0, familiasAjudadas + delta);
 
-  // Emite atualização em tempo real
   broadcastMetrics({ familiasAjudadas });
   res.json({ ok: true, familiasAjudadas });
 });
@@ -53,19 +48,48 @@ app.use("/comentarios", comentariosroutes)
 // Endpoint para disparar um banner público
 app.post('/admin/helper/banner', (req, res) => {
   const { message } = req.body as { message: string };
-  if (!message) res.status(400).json({ error: 'message é obrigatório' });
+  if (!message) {
+    res.status(400).json({ error: 'message é obrigatório' });
+    return;
+  }
   broadcastBanner(message);
   res.json({ ok: true });
-  return;
 });
 
-// (Opcional) Endpoint para obter o número atual no load da página
+// Endpoint para obter métricas
 app.get('/public/metrics', (req, res) => {
   res.json({ familiasAjudadas });
 });
 
+// SUAS ROTAS PRINCIPAIS
+app.use("/organizacoes", AuthorizeMiddleware, organizacaoRoutes);
+app.use("/parceiros", AuthorizeMiddleware, parceiroRoutes);
+app.use("/pontosArrecadacao", AuthorizeMiddleware, pontoArrecadacaoRoutes);
+app.use("/usuarios", usuarioRoutes);
+app.use("/autenticacao", authRouter);
+
+// Rota de teste - SEMPRE funciona
+app.get('/api/hello', (req, res) => {
+    console.log('✅ Rota /api/hello chamada!');
+    res.json({ message: 'FINALLY WORKING WITH TYPESCRIPT!', success: true });
+});
+
+// Rota de pagamento teste direta
+app.post('/api/payments/direct-test', (req, res) => {
+    console.log('✅ Direct payment route called:', req.body);
+    res.json({ 
+        id: 'direct-pref-' + Date.now(),
+        message: 'Direct payment route working!',
+        data: req.body
+    });
+});
+
+// ROTAS DE PAGAMENTO
+app.use('/api/payments', paymentRoutes);
+
 const PORT = process.env.PORT || 3000;
 const server = initSocket(app);
 server.listen(PORT, () => {
-  console.log(`HTTP + Socket.IO em http://localhost:${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`📧 Rotas de pagamento disponíveis em: http://localhost:${PORT}/api/payments`);
 });

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only app.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "start": "node dist/server.js",
     "build": "tsc",
     "migration:create": "npx sequelize-cli migration:generate --name",
@@ -21,6 +21,7 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^2.9.0",
     "multer": "^2.0.1",
     "mysql2": "^3.14.0",
     "pusher": "^5.2.0",
