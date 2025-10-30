@@ -11,7 +11,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { initSocket, broadcastBanner, broadcastMetrics } from './realtime/socket';
 import paymentRoutes from './routes/rotasPagamento';
-
+import eventosRoutes from "./routes/eventos.routes"
 dotenv.config();
 
 const app = express();
@@ -43,6 +43,7 @@ app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
 app.use("/usuarios",usuarioRoutes)
 app.use("/autenticacao", authRouter)
 app.use("/comentarios", comentariosroutes)
+app.use("/eventos", eventosRoutes);
 
 
 // Endpoint para disparar um banner público
