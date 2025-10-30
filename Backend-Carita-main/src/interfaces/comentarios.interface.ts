@@ -6,5 +6,5 @@ export interface Comentarios {
   //isApproved: boolean;
   createdAt: Date;
   updatedAt: Date;
-  idUsuario: number;
+  id_usuario: number;
 }
