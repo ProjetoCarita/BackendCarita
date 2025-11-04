@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
 const client = new MercadoPagoConfig({
-    accessToken: process.env.MP_ACCESS_TOKEN || 'TEST-12345678901234567890123456789012'
+    accessToken: process.env.MP_ACCESS_TOKEN || 'APP_USR-6593185265195698-092220-a627aef90d0648d1e95f98b92ad74270-2708636050'
 });
 
 export class PaymentController {
@@ -31,14 +31,15 @@ export class PaymentController {
                     }
                 ],
                 back_urls: {
-                    success: 'http://localhost:4200/payment/success',
-                    failure: 'http://localhost:4200/payment/failure',
-                    pending: 'http://localhost:4200/payment/pending',
+                    success: 'https://six-rockets-melt.loca.lt/payment/success/',
+                    failure: 'https://six-rockets-melt.loca.lt/payment/failure/',
+                    pending: 'https://six-rockets-melt.loca.lt/payment/pending/',
                 },
                 auto_return: 'approved',
-                notification_url: 'http://localhost:3000/api/payments/notification' // Opcional para webhooks
+                notification_url: 'https://six-rockets-melt.loca.lt/api/payments/notification' // Opcional para webhooks
             };
 
+            console.log(preferenceData)
             const result = await preference.create({ body: preferenceData });
             
             console.log('✅ Preferência criada com ID:', result.id);
