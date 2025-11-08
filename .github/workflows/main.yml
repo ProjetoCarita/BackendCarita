@@ -150,7 +150,7 @@ jobs:
       - name: Criar imagem docker
         run: |
           echo "Iniciando build da imagem Docker para o repositório projetocarita/carita"
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION .
+          docker build -f Backend-Carita-main/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION .
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
 
       - name: Efetuar push da imagem
