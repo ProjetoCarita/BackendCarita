@@ -156,8 +156,8 @@ jobs:
       - name: Efetuar push da imagem
         run: |
           echo "Fazendo push da imagem Docker para o Docker Hub ${{ secrets.DOCKERHUB_USERNAME }}/$REPO_NAME:$new_version" 
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/projetocarita/carita:$new_version
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/projetocarita/carita:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/carita:$new_version
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
           
       - name: Commit e push package/tag
         if: steps.version.outputs.should_deploy == 'true' && github.ref == 'refs/heads/develop'
