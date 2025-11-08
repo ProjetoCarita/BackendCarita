@@ -150,13 +150,13 @@ jobs:
       - name: Criar imagem docker
         run: |
           echo "Iniciando build da imagem Docker para o repositório projetocarita/carita"
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/projetocarita/carita:$new_version .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/projetocarita/carita:$new_version ${{ secrets.DOCKERHUB_USERNAME }}/$REPO_NAME:latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION .
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
 
       - name: Efetuar push da imagem
         run: |
-          echo "Fazendo push da imagem Docker para o Docker Hub ${{ secrets.DOCKERHUB_USERNAME }}/$REPO_NAME:$new_version" 
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION
+          echo "Fazendo push da imagem Docker para o Docker Hub ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION" 
+          
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
           
       - name: Commit e push package/tag
