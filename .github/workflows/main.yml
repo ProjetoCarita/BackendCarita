@@ -147,17 +147,16 @@ jobs:
           set -euo pipefail
           npm version "${NEW_VERSION}" --no-git-tag-version
 
-      - name: Criar imagem docker
-        run: |
-          echo "Iniciando build da imagem Docker para o repositório projetocarita/carita"
-          docker build -f Backend-Carita-main/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
-
-      - name: Efetuar push da imagem
-        run: |
-          echo "Fazendo push da imagem Docker para o Docker Hub ${{ secrets.DOCKERHUB_USERNAME }}/carita:$NEW_VERSION" 
-          
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
+      # 🐳 NOVO BLOCO DOCKER (substitui o build/push manual)
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Backend-Carita-main/Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/carita:${{ env.NEW_VERSION }}
           
       - name: Commit e push package/tag
         if: steps.version.outputs.should_deploy == 'true' && github.ref == 'refs/heads/develop'
