@@ -9,7 +9,7 @@
     "migration:create": "npx sequelize-cli migration:generate --name",
     "migrate": "npx sequelize-cli db:migrate",
     "reverse": "npx sequelize-cli db:migrate:undo:all",
-    "swagger-autogen": "node swagger.js"
+    "swagger-autogen": "ts-node swagger.ts"
   },
   "keywords": [],
   "author": "",
