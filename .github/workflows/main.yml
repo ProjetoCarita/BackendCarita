@@ -147,6 +147,13 @@ jobs:
           set -euo pipefail
           npm version "${NEW_VERSION}" --no-git-tag-version
 
+      - name: Gerar swagger-output.json
+        working-directory: Backend-Carita-main
+        run: |
+          echo "Gerando swagger-output.json para inclusão na imagem Docker"
+          npm install --force
+          npx ts-node swagger.ts
+
       # 🐳 NOVO BLOCO DOCKER (substitui o build/push manual)
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
