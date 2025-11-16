@@ -145,7 +145,7 @@ jobs:
           npm version "${NEW_VERSION}" --no-git-tag-version
 
       - name: Gerar swagger-output.json
-        working-directory: Backend-Carita-main
+        working-directory: BackendCarita/Backend-Carita-main
         run: |
           echo "Gerando swagger-output.json para inclusão na imagem Docker"
           npm install --force
