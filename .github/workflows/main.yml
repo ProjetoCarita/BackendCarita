@@ -155,8 +155,8 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: Backend-Carita-main/Dockerfile
+          context: BackendCarita/Backend-Carita-main
+          file: BackendCarita/Backend-Carita-main/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/carita:latest
