@@ -37,12 +37,12 @@ app.post('/admin/metrics/familias', (req, res) => {
   res.json({ ok: true, familiasAjudadas });
 });
 
-app.use("/organizacoes", AuthorizeMiddleware, organizacaoRoutes);
+app.use("/organizacoes",  organizacaoRoutes);
 app.use("/parceiros",AuthorizeMiddleware,parceiroRoutes)
 app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
-app.use("/usuarios",usuarioRoutes)
+app.use("/usuarios",AuthorizeMiddleware,usuarioRoutes)
 app.use("/autenticacao", authRouter)
-app.use("/comentarios", comentariosroutes)
+app.use("/comentario",  comentariosroutes)
 app.use("/eventos", eventosRoutes);
 
 

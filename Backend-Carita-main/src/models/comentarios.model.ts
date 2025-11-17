@@ -1,5 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/database";
+import { UsuarioModel } from "./usuario.model";
 
 import { Comentarios } from "../interfaces/comentarios.interface";
 
@@ -52,4 +53,10 @@ ComentariosModel.init({
   tableName: "Comentarios",
   modelName: 'Comentarios',
   timestamps: true
+}
+);
+
+ComentariosModel.belongsTo(UsuarioModel, {
+  foreignKey: "id_usuario",
+  as: "usuario", // 👈 esse nome precisa bater com o include no controller
 });
