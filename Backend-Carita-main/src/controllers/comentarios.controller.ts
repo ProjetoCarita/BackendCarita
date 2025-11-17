@@ -10,20 +10,20 @@ export const create = async (data: any) => {
 
 export const listAll = async () => {
   return await ComentariosModel.findAll({
-    include: [{ association: "usuario", attributes: ["id_usuario", "nome", "email"] }],
+    include: [{ association: "usuario", attributes: ["id_usuario",  "email"] }],
   });
 };
 
 export const getById = async (id: number) => {
   return await ComentariosModel.findByPk(id, {
-    include: [{ association: "usuario", attributes: ["id_usuario", "nome", "email"] }],
+    include: [{ association: "usuario", attributes: ["id_usuario",  "email"] }],
   });
 };
 
 export const getByUsuarioId = async (id_usuario: number) => {
   return await ComentariosModel.findAll({
     where: { id_usuario },
-    include: [{ association: "usuario", attributes: ["id_usuario", "nome", "email"] }],
+    include: [{ association: "usuario", attributes: ["id_usuario",  "email"] }],
   });
 };
 
