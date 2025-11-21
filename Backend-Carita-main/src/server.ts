@@ -21,7 +21,7 @@ const swaggerFile = require('../swagger-output.json');
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(cors({ origin: "*" }));
-app.use(express.json()); // ← APENAS UMA VEZ
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
 // ==== MÉTRICAS EM MEMÓRIA ====
@@ -40,7 +40,7 @@ app.post('/admin/metrics/familias', (req, res) => {
 app.use("/organizacoes",  organizacaoRoutes);
 app.use("/parceiros",AuthorizeMiddleware,parceiroRoutes)
 app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
-app.use("/usuarios",AuthorizeMiddleware,usuarioRoutes)
+app.use("/usuarios",usuarioRoutes)
 app.use("/autenticacao", authRouter)
 app.use("/comentario",  comentariosroutes)
 app.use("/eventos", eventosRoutes);
