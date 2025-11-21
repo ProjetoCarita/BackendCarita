@@ -11,26 +11,29 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: { model: 'Usuarios', key: 'id_usuario' }, // ajuste conforme seu nome de tabela
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
-      message: {
+      mensagem: {
         type: DataTypes.TEXT,
         allowNull: false,
+      },
+      id_usuario: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'usuario',  // nome da tabela de usuários
+          key: 'id_usuario'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
     });
   },

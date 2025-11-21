@@ -1,18 +1,19 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/database";
+import { UsuarioModel } from "./usuario.model";
 
 import { Comentarios } from "../interfaces/comentarios.interface";
 
-type ComentarioCreationalAttributes = Optional<Comentarios, "id_comentario">
+type ComentariosCreationalAttributes = Optional<Comentarios, "id_comentario">
 
-export class ComentarioModel extends Model<Comentarios, ComentarioCreationalAttributes> {
+export class ComentariosModel extends Model<Comentarios, ComentariosCreationalAttributes> {
 public id_comentario!: number;
 public mensagem!: string;
-public idUsuario!: number;
 public createdAt!: Date;
+public id_usuario!: number;
 } 
 
-ComentarioModel.init({
+ComentariosModel.init({
   id_comentario: { 
     type: DataTypes.INTEGER, 
     autoIncrement: true, 
@@ -22,10 +23,7 @@ ComentarioModel.init({
     type: DataTypes.TEXT, 
     allowNull: false 
   },
-  idUsuario: { 
-    type: DataTypes.INTEGER, 
-    allowNull: false 
-  },
+  
   createdAt: { 
     type: DataTypes.DATE, 
     allowNull: false,
@@ -37,11 +35,28 @@ ComentarioModel.init({
     allowNull: false,
     field: 'updatedAt',
   },
+    id_usuario: {
+  type: DataTypes.INTEGER,
+  allowNull: false,
+  references: {
+    model: 'usuario', 
+    key: 'id_usuario', 
+  },
+  field: 'id_usuario', 
+}
 
 },
 
+
 {
   sequelize,
-  tableName: "comentario",
+  tableName: "Comentarios",
+  modelName: 'Comentarios',
   timestamps: true
+}
+);
+
+ComentariosModel.belongsTo(UsuarioModel, {
+  foreignKey: "id_usuario",
+  as: "usuario", // 👈 esse nome precisa bater com o include no controller
 });

@@ -96,7 +96,7 @@ const uploadFields = upload.fields([
  *       200:
  *         description: Resposta bem-sucedida
  */
-router.post("/", uploadFields, async (req: Request, res: Response) => {
+router.post("/", AuthorizeMiddleware,uploadFields, async (req: Request, res: Response) => {
   const files = req.files as {
     [fieldname: string]: Express.Multer.File[];
   };
@@ -135,7 +135,7 @@ router.post("/", uploadFields, async (req: Request, res: Response) => {
  *       200:
  *         description: Resposta bem-sucedida
  */
-router.put("/:id", uploadFields, async (req: Request, res: Response) => {
+router.put("/:id",AuthorizeMiddleware, uploadFields, async (req: Request, res: Response) => {
   const { id } = req.params;
 
   const files = req.files as {

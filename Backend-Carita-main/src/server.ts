@@ -1,37 +1,35 @@
 import express from 'express';
 import cors from 'cors';
-import comentariosRoutes from "./routes/comentarios.routes";
+import comentariosroutes from "./routes/comentarios.routes"
 import organizacaoRoutes from "./routes/organizacao.routes";
-import parceiroRoutes from "./routes/parceiro.routes";
-import pontoArrecadacaoRoutes from "./routes/pontoArrecadacao.routes";
-import usuarioRoutes from "./routes/usuario.routers";
+import parceiroRoutes from "./routes/parceiro.routes"
+import pontoArrecadacaoRoutes from "./routes/pontoArrecadacao.routes"
+import usuarioRoutes from "./routes/usuario.routers"
 import { authRouter } from "./routes/auth.routes";
 import { AuthorizeMiddleware } from './middlewares/authorize.middleware';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { initSocket, broadcastBanner, broadcastMetrics } from './realtime/socket';
 import paymentRoutes from './routes/rotasPagamento';
-import swaggerUi from 'swagger-ui-express';
-import { UsuarioModel } from './models/usuario.model';
-
+import eventosRoutes from "./routes/eventos.routes"
 dotenv.config();
 
 const app = express();
+import swaggerUi from 'swagger-ui-express';
 const swaggerFile = require('../swagger-output.json');
 
-// ===================== MIDDLEWARES =====================
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 app.use(cors({ origin: "*" }));
-app.use(express.json());
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
-// ===================== MÉTRICAS EM MEMÓRIA =====================
+// ==== MÉTRICAS EM MEMÓRIA ====
 let familiasAjudadas = 0;
 
-// Atualiza métricas
+// Endpoint para atualizar métricas
 app.post('/admin/metrics/familias', (req, res) => {
   const { delta, total } = req.body as { delta?: number; total?: number };
-
   if (typeof total === 'number') familiasAjudadas = Math.max(0, total);
   if (typeof delta === 'number') familiasAjudadas = Math.max(0, familiasAjudadas + delta);
 
@@ -39,40 +37,16 @@ app.post('/admin/metrics/familias', (req, res) => {
   res.json({ ok: true, familiasAjudadas });
 });
 
-// ===================== ROTAS PROTEGIDAS =====================
-app.use("/organizacoes", AuthorizeMiddleware, organizacaoRoutes);
-app.use("/parceiros", AuthorizeMiddleware, parceiroRoutes);
-app.use("/pontosArrecadacao", AuthorizeMiddleware, pontoArrecadacaoRoutes);
+app.use("/organizacoes",  organizacaoRoutes);
+app.use("/parceiros",AuthorizeMiddleware,parceiroRoutes)
+app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
+app.use("/usuarios",usuarioRoutes)
+app.use("/autenticacao", authRouter)
+app.use("/comentario",  comentariosroutes)
+app.use("/eventos", eventosRoutes);
 
-// ===================== ROTAS LIVRES =====================
-app.use("/usuarios", usuarioRoutes);
-app.use("/autenticacao", authRouter);
-app.use("/comentarios", comentariosRoutes);
 
-// ===================== ROTA PÚBLICA: DASHBOARD =====================
-app.get("/dashboard-data", async (req, res) => {
-  try {
-    const usuariosAtivos = await UsuarioModel.count({ where: { status: true } });
-    const usuariosInativos = await UsuarioModel.count({ where: { status: false } });
-
-    const data = {
-      labels: ["Ativos", "Inativos"],
-      datasets: [
-        {
-          label: "Usuários",
-          data: [usuariosAtivos, usuariosInativos],
-        },
-      ],
-    };
-
-    res.status(200).json(data);
-  } catch (error) {
-    console.error("Erro ao gerar dados do dashboard:", error);
-    res.status(500).json({ message: "Erro ao gerar dados do dashboard." });
-  }
-});
-
-// ===================== ROTAS DE ADMIN (BANNER E MÉTRICAS) =====================
+// Endpoint para disparar um banner público
 app.post('/admin/helper/banner', (req, res) => {
   const { message } = req.body as { message: string };
   if (!message) {
@@ -83,34 +57,40 @@ app.post('/admin/helper/banner', (req, res) => {
   res.json({ ok: true });
 });
 
+// Endpoint para obter métricas
 app.get('/public/metrics', (req, res) => {
   res.json({ familiasAjudadas });
 });
 
-// ===================== TESTES =====================
+// SUAS ROTAS PRINCIPAIS
+app.use("/organizacoes", AuthorizeMiddleware, organizacaoRoutes);
+app.use("/parceiros", AuthorizeMiddleware, parceiroRoutes);
+app.use("/pontosArrecadacao", AuthorizeMiddleware, pontoArrecadacaoRoutes);
+app.use("/usuarios", usuarioRoutes);
+app.use("/autenticacao", authRouter);
+
+// Rota de teste - SEMPRE funciona
 app.get('/api/hello', (req, res) => {
-  console.log('✅ Rota /api/hello chamada!');
-  res.json({ message: 'FINALLY WORKING WITH TYPESCRIPT!', success: true });
+    console.log('✅ Rota /api/hello chamada!');
+    res.json({ message: 'FINALLY WORKING WITH TYPESCRIPT!', success: true });
 });
 
+// Rota de pagamento teste direta
 app.post('/api/payments/direct-test', (req, res) => {
-  console.log('✅ Direct payment route called:', req.body);
-  res.json({
-    id: 'direct-pref-' + Date.now(),
-    message: 'Direct payment route working!',
-    data: req.body,
-  });
+    console.log('✅ Direct payment route called:', req.body);
+    res.json({ 
+        id: 'direct-pref-' + Date.now(),
+        message: 'Direct payment route working!',
+        data: req.body
+    });
 });
 
-// ===================== PAGAMENTOS =====================
+// ROTAS DE PAGAMENTO
 app.use('/api/payments', paymentRoutes);
 
-// ===================== INICIALIZAÇÃO DO SERVIDOR =====================
 const PORT = process.env.PORT || 3000;
 const server = initSocket(app);
-
 server.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
   console.log(`📧 Rotas de pagamento disponíveis em: http://localhost:${PORT}/api/payments`);
-  console.log(`📊 Dashboard disponível em: http://localhost:${PORT}/dashboard-data`);
 });

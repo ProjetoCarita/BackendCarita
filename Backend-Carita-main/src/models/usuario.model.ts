@@ -21,7 +21,7 @@ UsuarioModel.init({
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
-    field: "id_usuario"//nome do id dentro do migration
+    field: "id_usuario"
   },
   cpf: {
     allowNull: false,
