@@ -26,7 +26,12 @@ module.exports = {
         allowNull: false, 
             type: DataTypes.BOOLEAN
       },
-        createdAt: {                     // <-- criado automaticamente
+      role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "user"  
+      },
+        createdAt: {                    
         allowNull: false,
         type: DataTypes.DATE,
          timestamps: true,

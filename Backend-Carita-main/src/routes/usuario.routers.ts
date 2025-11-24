@@ -23,6 +23,9 @@ const router = express.Router();
 router.post("/", async (req: Request, res: Response) => {
   try {
     const usuario = req.body;
+
+     usuario.role = "user";
+
     console.log(usuario)
 
     const existente = await UsuarioModel.findOne({
@@ -59,6 +62,32 @@ router.post("/", async (req: Request, res: Response) => {
     // res.status(400).json({ message: "Campos obrigatórios ausentes ou inválidos." });
   }
 });
+
+
+router.get("/dashboard-data",AuthorizeMiddleware, async (req: Request, res: Response): Promise<void> => {
+  try {
+    // Conta usuários ativos e inativos
+    const usuariosAtivos = await UsuarioModel.count({ where: { status: true } });
+    const usuariosInativos = await UsuarioModel.count({ where: { status: false } });
+
+    const data = {
+      labels: ["Ativos", "Inativos"],
+      datasets: [
+        {
+          label: "Usuários",
+          data: [usuariosAtivos, usuariosInativos],
+        },
+      ],
+    };
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error("Erro ao gerar dados do dashboard:", error);
+    res.status(500).json({ message: "Erro ao gerar dados do dashboard." });
+  }
+});
+
+
 
 
 // router.use(AuthorizeMiddleware);
@@ -163,4 +192,6 @@ router.get("/", AuthorizeMiddleware,async (req: Request, res: Response) => {
   }
 });
 */
+
+
 export default router;
