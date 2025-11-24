@@ -23,6 +23,13 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
   try {
     const usuario = req.body;
 
+
+     usuario.role = "user";
+
+    console.log(usuario)
+
+ develop
+
     const existente = await UsuarioModel.findOne({
       where: {
         [Op.or]: [
@@ -50,6 +57,36 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
     res.status(500).json({ message: "Erro ao cadastrar usuário." });
   }
 });
+
+
+
+router.get("/dashboard-data",AuthorizeMiddleware, async (req: Request, res: Response): Promise<void> => {
+  try {
+    // Conta usuários ativos e inativos
+    const usuariosAtivos = await UsuarioModel.count({ where: { status: true } });
+    const usuariosInativos = await UsuarioModel.count({ where: { status: false } });
+
+    const data = {
+      labels: ["Ativos", "Inativos"],
+      datasets: [
+        {
+          label: "Usuários",
+          data: [usuariosAtivos, usuariosInativos],
+        },
+      ],
+    };
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error("Erro ao gerar dados do dashboard:", error);
+    res.status(500).json({ message: "Erro ao gerar dados do dashboard." });
+  }
+});
+
+
+
+
+// router.use(AuthorizeMiddleware);
 
 
 /**
@@ -189,4 +226,8 @@ router.get("/dashboard-data", async (req: Request, res: Response): Promise<void>
   }
 });
 
+*/
+
+
 export default router;
+

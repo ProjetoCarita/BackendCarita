@@ -11,6 +11,7 @@ export class UsuarioModel extends Model<Usuario, UsuarioCreationalAttributes> {
   public email!: string;
   public senha!: string;
   public status!: boolean;
+  public role!: string;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
@@ -38,6 +39,11 @@ UsuarioModel.init({
     allowNull: false,
     field: "senha",
     type: DataTypes.STRING(100),
+  },
+  role: {
+  type: DataTypes.STRING,
+  allowNull: false,
+  defaultValue: "user"   // qualquer novo cadastro será 'user'
   },
   status: {
     allowNull: false,
