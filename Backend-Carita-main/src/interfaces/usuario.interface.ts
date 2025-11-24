@@ -4,6 +4,7 @@ export interface Usuario{
     cpf: string,
     senha?:string,
     status: boolean,
+    role?: string,
     createdAt: Date,
     updatedAt: Date
   }
