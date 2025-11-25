@@ -28,7 +28,7 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
 
     console.log(usuario)
 
- develop
+ 
 
     const existente = await UsuarioModel.findOne({
       where: {
@@ -225,9 +225,6 @@ router.get("/dashboard-data", async (req: Request, res: Response): Promise<void>
     res.status(500).json({ message: "Erro ao gerar dados do dashboard." });
   }
 });
-
-*/
-
 
 export default router;
 
