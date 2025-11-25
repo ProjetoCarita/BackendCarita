@@ -39,7 +39,7 @@ app.post('/admin/metrics/familias', (req, res) => {
 
 app.use("/organizacoes",  organizacaoRoutes);
 app.use("/parceiros",AuthorizeMiddleware,parceiroRoutes)
-app.use("/pontosArrecadacao",AuthorizeMiddleware,pontoArrecadacaoRoutes)
+app.use("/pontosArrecadacao",pontoArrecadacaoRoutes)
 app.use("/usuarios",usuarioRoutes)
 app.use("/autenticacao", authRouter)
 app.use("/comentario",  comentariosroutes)
