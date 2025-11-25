@@ -24,7 +24,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
-// ==== MÉTRICAS EM MEMÓRIA ====
+// ==== MÉTRICAS EM MEMÓRIA ==== //
 let familiasAjudadas = 0;
 
 // Endpoint para atualizar métricas
