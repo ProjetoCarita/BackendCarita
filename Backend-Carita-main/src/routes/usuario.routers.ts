@@ -28,7 +28,7 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
 
     console.log(usuario)
 
- develop
+
 
     const existente = await UsuarioModel.findOne({
       where: {
@@ -226,7 +226,7 @@ router.get("/dashboard-data", async (req: Request, res: Response): Promise<void>
   }
 });
 
-*/
+
 
 
 export default router;

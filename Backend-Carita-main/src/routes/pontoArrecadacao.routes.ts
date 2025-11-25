@@ -56,7 +56,7 @@ router.get("/:id", async (req: Request, res: Response) => {
  *       200:
  *         description: Resposta bem-sucedida
  */
-router.post("/", async (req: Request, res: Response) => {
+router.post("/",AuthorizeMiddleware, async (req: Request, res: Response) => {
     const parceiro = await create(req.body);
     res.json(parceiro);
 });
