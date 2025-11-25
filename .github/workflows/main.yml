@@ -137,7 +137,7 @@ jobs:
           fi
       
       - name: Atualizar versão no package.json
-        if: steps.version.outputs.should_deploy == 'true' && github.ref == 'refs/heads/develop'
+        if: steps.version.outputs.should_deploy == 'true' && github.ref == 'refs/heads/main'
         env:
           NEW_VERSION: ${{ steps.version.outputs.new_version }}
         run: |
