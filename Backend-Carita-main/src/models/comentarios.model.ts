@@ -58,5 +58,5 @@ ComentariosModel.init({
 
 ComentariosModel.belongsTo(UsuarioModel, {
   foreignKey: "id_usuario",
-  as: "usuario", // 👈 esse nome precisa bater com o include no controller
+  as: "usuario", //  esse nome precisa bater com o include no controller
 });
