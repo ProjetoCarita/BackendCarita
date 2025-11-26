@@ -183,8 +183,9 @@ jobs:
             git tag "v${NEW_VERSION}"
           fi
 
-          # Push do commit para main
+          # Push do commit para main e develop
           git push origin HEAD:main
+          git push origin HEAD:develop
 
           # Push da tag (se existir localmente)
           if git rev-parse "v${NEW_VERSION}" >/dev/null 2>&1; then
