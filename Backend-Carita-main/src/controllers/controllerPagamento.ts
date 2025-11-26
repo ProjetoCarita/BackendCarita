@@ -31,12 +31,12 @@ export class PaymentController {
                     }
                 ],
                 back_urls: {
-                    success: 'https://six-rockets-melt.loca.lt/payment/success/',
-                    failure: 'https://six-rockets-melt.loca.lt/payment/failure/',
-                    pending: 'https://six-rockets-melt.loca.lt/payment/pending/',
+                    success: "https://frontend-carita-six.vercel.app/pagamento/sucesso",
+                    failure: "https://frontend-carita-six.vercel.app/pagamento/erro",
+                    pending: "https://frontend-carita-six.vercel.app/pagamento/pendente"
                 },
                 auto_return: 'approved',
-                notification_url: 'https://six-rockets-melt.loca.lt/api/payments/notification' // Opcional para webhooks
+                notification_url: 'https://frontend-carita-six.vercel.app/api/payments/notification' // Opcional para webhooks
             };
 
             console.log(preferenceData)
