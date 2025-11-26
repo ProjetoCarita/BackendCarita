@@ -1,6 +1,6 @@
 {
   "name": "aula-de-hoje-back",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "![Carita-Banner](https://github.com/user-attachments/assets/4e707fe9-2283-4e9b-b036-3e678ceb8f3b)",
   "main": "dist/server.js",
   "scripts": {
