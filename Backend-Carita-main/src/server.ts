@@ -20,7 +20,7 @@ const swaggerFile = require('../swagger-output.json');
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://frontend-carita-six.vercel.app" }));
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
