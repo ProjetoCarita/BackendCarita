@@ -192,19 +192,22 @@ jobs:
             git push origin "v${NEW_VERSION}"
           fi
 
-      # Envio de e-mail EM CASO DE FALHA no pipeline
+      # 📧 Envio de email em caso de falha
       - name: Enviar email se falhar
         if: failure()
-        uses: dawidd6/action-send-mail@v3          
-      # Cadastrar os dados para envio de e-mail e recupera-los aqui 
-      # Ex.: SMTP DO SERVIDOR DE E-MAIL / PORTA / USUARIO / SENHA / EMAIL E API/TOKEN PARA ENVIO DE E-MAIL)
-      # No gmail há uma configuração para geração de secret para envio de e-mails por aplicativos terceiros
-      # E-mail deve ser enviado para: fe.dsm.vot.001@gmail.com
-      # Assunto: Falha pipeline Actions
-      # Conteúdo: 
-          #  A execução falhou.
-          #  Repositório: ${{ github.repository }}
-          #  Commit: ${{ github.sha }}
-          #  Workflow: ${{ github.workflow }}
-          #  Job: ${{ github.job }}
-          #  Veja os logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_APP_PASSWORD }}
+          from: ${{ secrets.EMAIL_USER }}
+          to: "fe.dsm.vot.001@gmail.com"
+          subject: "Falha pipeline Actions"
+          body: |
+            ❌ A execução do workflow falhou.
+
+            🔹 Repositório: ${{ github.repository }}
+            🔹 Commit SHA: ${{ github.sha }}
+            🔹 Workflow: ${{ github.workflow }}
+            🔹 Job: ${{ github.job }}
