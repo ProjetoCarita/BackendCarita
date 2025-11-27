@@ -24,7 +24,7 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
     const usuario = req.body;
 
 
-     usuario.role = "user";
+     //usuario.role = "user";
 
     console.log(usuario)
 
