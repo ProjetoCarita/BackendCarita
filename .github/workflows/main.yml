@@ -202,7 +202,7 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_APP_PASSWORD }}
           from: ${{ secrets.EMAIL_USER }}
-          to: "fe.dsm.vot.001@gmail.com"
+          to: "fernandorsantos2802@gmail.com"
           subject: "Falha pipeline Actions"
           body: |
             ❌ A execução do workflow falhou.
